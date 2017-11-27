@@ -1,0 +1,15 @@
+import {
+  GET_CATEGORIES,
+} from '../actions/types';
+
+const defaultCategories = [];
+
+export default (state = defaultCategories, action) => {
+  switch (action.type) {
+    case GET_CATEGORIES:
+      return action.categories;
+
+    default:
+      return state;
+  }
+};

@@ -1,0 +1,21 @@
+// CATEGORIES
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+
+// POSTS
+export const GET_POSTS = 'GET_POSTS';
+export const VOTE_POST = 'VOTE_POST';
+export const ADD_POST = 'ADD_POST';
+export const EDIT_POST = 'EDIT_POST';
+export const DELETE_POST = 'DELETE_POST';
+
+// SORT / FILTER
+export const SET_SORTING_TYPE = 'SET_SORTING_TYPE';
+export const SET_SORTING_DIRECTION = 'SET_SORTING_DIRECTION';
+export const SET_FILTER = 'SET_FILTER';
+
+// COMMENTS
+export const GET_POST_COMMENTS = 'GET_POST_COMMENTS';
+export const VOTE_COMMENT = 'VOTE_COMMENT';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
