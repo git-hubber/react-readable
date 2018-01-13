@@ -55,13 +55,13 @@ class PostPage extends Component {
       this.props.history.goBack();
     }
   }
-
+  _renderNoMatch = () => (<div className='container'><h1>Not found</h1></div>)
   render() {
     const {
       modalIsOpen,
     } = this.state;
 
-    if (!this.props.post) return <div />;
+    if (!this.props.post) return this._renderNoMatch();
 
     const {
       match: { params: { id } },
