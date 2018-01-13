@@ -1,10 +1,12 @@
 export const ModalStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+    top: '20%',
+    left: '30%',
+    // right: 'auto',
+    // bottom: 'auto',
+    // marginRight: '-40%',
+    // transform: 'translate(-40%, -40%)',
+    width: '40%',
+    height: '60%',
   },
 };

@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import { ModalStyles } from '../styles/ModalStyles';
 import PostForm from './PostForm';
 import Post from './Post';
+import SortingHeader from './SortingHeader';
 import { startEditPost } from '../actions/posts';
 
 class Posts extends Component {
@@ -38,15 +39,22 @@ class Posts extends Component {
   }
 
   render() {
-    const { posts } = this.props;
+    const { category, posts, newPost } = this.props;
     const {
       modalIsOpen,
       initialValues,
     } = this.state;
 
     return (
-      <div>
-        <h1>Posts [{posts.length}]</h1>
+      <div id='posts'>
+        <div className='posts-header'>
+          <span>{category || 'Posts'}</span> (Showing {posts.length} posts)
+          <button
+            className='button new-post-button'
+            onClick={newPost}
+          >New Post
+          </button>
+        </div>
         <Modal
           isOpen={modalIsOpen}
           style={ModalStyles}
@@ -59,7 +67,7 @@ class Posts extends Component {
             editMode
           />
         </Modal>
-
+        <SortingHeader />
         {posts.length > 0 && posts.map((post) => <Post key={post.id} post={post} openModal={this._openModal} />)}
       </div>
     );

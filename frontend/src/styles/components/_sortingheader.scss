@@ -1,0 +1,10 @@
+#sortingHeader {
+    background-color: $off-white;
+    border: 1px solid darken($off-white, 7%);
+    border-top: 0;
+    color: $grey;
+    padding: $s-size;
+  span {
+    margin: 0 5px;
+  }
+}

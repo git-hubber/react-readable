@@ -1,7 +1,14 @@
 @import './base/variables';
 @import './base/base';
+@import './components/button';
+@import './components/form';
 @import './components/header';
-
+@import './components/inputs';
+@import './components/navheader';
+@import './components/itemfooter';
+@import './components/itemvote';
+@import './components/posts_and_comments';
+@import './components/sortingheader';
 .App {
   text-align: center;
 }
@@ -24,6 +31,12 @@
 
 .App-intro {
   font-size: large;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @keyframes App-logo-spin {

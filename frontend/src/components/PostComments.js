@@ -6,6 +6,7 @@ import { ModalStyles } from '../styles/ModalStyles';
 import { selector } from '../selectors/';
 import CommentForm from './CommentForm';
 import Comment from './Comment';
+import SortingHeader from './SortingHeader';
 import {
   startAddComment,
   startEditComment,
@@ -81,18 +82,25 @@ class PostComments extends Component {
             editMode={editMode}
           />
         </Modal>
-        Showing {filteredCommentCount} of {commentCount} Comments
-        <button
-          onClick={() => this._openModal({}, false)}
-        >New Comment
-        </button>
-        {comments.length > 0 && comments.map((comment) => (
-          <Comment
-            key={comment.id}
-            comment={comment}
-            openModal={(initialvalues) => this._openModal(initialvalues, true)}
-          />
-        ))}
+
+        <div id='comments'>
+          <div className='comments-header'>
+            Showing {filteredCommentCount} of {commentCount} Comments
+            <button
+              className='button new-comment-button'
+              onClick={() => this._openModal({}, false)}
+            >New Comment
+            </button>
+          </div>
+          <SortingHeader />
+          {comments.length > 0 && comments.map((comment) => (
+            <Comment
+              key={comment.id}
+              comment={comment}
+              openModal={(initialvalues) => this._openModal(initialvalues, true)}
+            />
+          ))}
+        </div>
       </div>
     );
   }

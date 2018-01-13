@@ -19,14 +19,14 @@ const Comment = ({ comment, startVoteComment, startDeleteComment, openModal }) =
   } = comment;
 
   const datetime = moment(timestamp).format('DD MMMM YYYY HH:mm');
-  const fromNow = moment(timestamp).fromNow();
 
   const _castVote = (option) => {
     startVoteComment(id, option);
   };
 
   const _deleteComment = () => {
-    startDeleteComment(id);
+    const deleteConfirm = window.confirm('Are you sure?');
+    if (deleteConfirm) startDeleteComment(id);
   };
 
   const _openModal = () => {
@@ -34,12 +34,17 @@ const Comment = ({ comment, startVoteComment, startDeleteComment, openModal }) =
   };
 
   return (
-    <div>
+    <div className='comment'>
       <ItemVote
         castVote={(option) => _castVote(option)}
         voteScore={voteScore}
       />
-    Comment: {id} - {body} - by {author} - {timestamp} - {datetime} - {voteScore}
+      <div className='comment-content'>
+        {body}
+        <div className="dot-point"><span>@</span> {datetime}</div>
+        <div className="dot-point"><span>by</span> {author}</div>
+      </div>
+
       <ItemFooter
         openModal={_openModal}
         deleteItem={_deleteComment}

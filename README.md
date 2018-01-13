@@ -1,22 +1,35 @@
-# Readable API Server
+# Readable
 
-This is the starter project for the final assessment project for Udacity's Redux course where you will build a content and comment web app. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.
+The second project from Udacity's React Developer nanodegree program.
+This is a reddit style blogging/voting/commenting system. Built primarily using react, react-redux, and react-router-dom.
+This is a very basic style blog, with no authentication system.
+Users are able to view a list of category defined posts. These posts can then be sorted, and filtered.
+Each post also has it's own dedicated page. This page containst post details and comments.
+A user can create new posts, edit and delete posts. Comments are also ablto to be added, edited or deleted.
 
-This repository includes the code for the backend API Server that you'll use to develop and interact with the front-end portion of the project.
+Bootstrapped with [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-## Start Developing
+Based on [this project template](https://github.com/udacity/reactnd-project-readable-starter).
 
-To get started developing right away:
+### Installing and Running:
 
-* Install and start the API server
-    - `cd api-server`
-    - `npm install`
-    - `node server`
-* In another terminal window, use Create React App to scaffold out the front-end
-    - `create-react-app frontend`
-    - `cd frontend`
-    - `npm start`
+Clone this repo and run the command `yarn` or `npm install`.
 
-## API Server
+To launch the backend api-server:
+```
+cd api-server
+node server
+```
 
-Information about the API server and how to use it can be found in its [README file](api-server/README.md).
+To launch the development server run the command:
+```
+npm start
+or
+yarn start
+```
+
+The page should open automatically in browser. Else go to `localhost:3000` in your browser to view the app.
+
+## License
+
+This project is licensed under the MIT License

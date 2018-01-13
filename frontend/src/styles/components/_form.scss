@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  >* {
+    margin-bottom: $m-size;
+  }
+}
+
+.main-buttons {
+  button {
+    width: calc(50% - 5px);
+    &:first-of-type {
+      margin-right: 10px;
+    }
+  }
+}
+
+.secondary-buttons {
+  position: relative;
+  button {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: calc(50% - 5px);
+  }
+}

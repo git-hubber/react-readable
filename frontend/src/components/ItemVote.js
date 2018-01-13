@@ -1,18 +1,22 @@
 import React from 'react';
 
 const ItemVote = ({ castVote, voteScore }) => (
-  <div>
+  <div className='item-vote'>
     <button
       onClick={() => castVote('upVote')}
+      className='button-link'
     >
-  upVote
+▲
     </button>
+    <div>{voteScore}</div>
     <button
       onClick={() => castVote('downVote')}
+      className='button-link'
     >
-  downVote
-    </button>{voteScore}
+▼
+    </button>
   </div>
+
 );
 
 export default ItemVote;

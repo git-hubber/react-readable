@@ -7,15 +7,15 @@ const validate = values => {
   const errors = {};
 
   if (!values.author) {
-    errors.author = 'Required';
+    errors.author = '* Required';
   } else if (values.author.length < 5) {
-    errors.author = 'Must be 5 characters or more';
+    errors.author = '* Must be 5 characters or more';
   }
 
   if (!values.body) {
-    errors.body = 'Required';
+    errors.body = '* Required';
   } else if (values.body.length < 10) {
-    errors.body = 'Must be 10 characters or more';
+    errors.body = '* Must be 10 characters or more';
   }
 
   return errors;
@@ -45,25 +45,32 @@ const CommentForm = ({ handleSubmit, handleCancel, submitting, pristine, reset, 
         component={TextAreaField}
       />
     </div>
-    <div>
+
+    <div className='main-buttons'>
       <button
-        type="submit"
-        disabled={submitting}
-      >
-          Submit
-      </button>
-    </div>
-    <div>
-      <button
+        className='button button-danger'
         type="button"
         disabled={submitting}
         onClick={handleCancel}
       >
         Cancel
       </button>
+
+      <button
+        className='button'
+        type="submit"
+        disabled={submitting}
+      >
+          Submit
+      </button>
     </div>
-    <div>
-      <button type="button" disabled={pristine || submitting} onClick={reset}>
+    <div className='secondary-buttons'>
+      <button
+        className='button'
+        type="button"
+        disabled={pristine || submitting}
+        onClick={reset}
+      >
           Start over
       </button>
     </div>

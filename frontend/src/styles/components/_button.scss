@@ -1,0 +1,33 @@
+.button {
+  background: $blue;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 300;
+  line-height: 1;
+  padding: $s-size;
+  text-decoration: none;
+  &.new-post-button, &.new-comment-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  &:disabled {
+    background-color: $grey;
+    cursor: default;
+  }
+}
+
+.button-link {
+  background: none;
+  border: none;
+}
+
+.button-secondary {
+  background: #888;
+}
+
+.button-danger {
+  background-color: red;
+}

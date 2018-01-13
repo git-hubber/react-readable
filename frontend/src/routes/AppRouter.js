@@ -7,7 +7,7 @@ import NotFoundPage from '../views/NotFoundPage';
 import Header from '../components/Header';
 import NavHeader from '../components/NavHeader';
 
-export const AppRouter = ({ updateBooks, books }) => (
+export const AppRouter = () => (
   <BrowserRouter>
     <div>
       <Header />
@@ -30,4 +30,3 @@ export const AppRouter = ({ updateBooks, books }) => (
     </div>
   </BrowserRouter>
 );
-

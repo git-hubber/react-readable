@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
-  <div>
-    <h1>Header</h1>
+  <div id="header">
+    <div className="container">
+      <h1><Link to='/'>Reacted</Link></h1>
+    </div>
   </div>
 );
 

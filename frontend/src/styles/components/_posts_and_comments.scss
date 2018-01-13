@@ -1,0 +1,61 @@
+#comments {
+  margin-left: 20px;
+  margin-top: -10px;
+}
+#posts, #comments {
+  margin-bottom: 10px;
+  .posts-header, .comments-header {
+    background: $off-white;
+    border: 1px solid darken($off-white, 7%);
+    border-bottom: 0;
+    color: $dark-grey;
+    font-weight: bold;
+    padding: $s-size $s-size;
+    position: relative;
+    span {
+      text-transform: capitalize;
+    }
+  }
+  .comments-header {
+    border-top: 0px;
+  }
+  .post, .comment {
+    border: 1px solid darken($off-white, 7%);
+    border-top: none;
+    color: $dark-grey;
+    display: flex;
+    flex-direction: column;
+    padding: $s-size;
+    text-decoration: none;
+    transition: background .3s ease;
+    &:hover {
+      background: $off-white;
+    }
+    @media (min-width: $desktop-breakpoint) {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: $m-size;
+    }
+    .post-content, .comment-content {
+      display: inline-block;
+      margin-right: 10px;
+      width: 100%;
+      a {
+        color: $blue;
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .dot-point {
+        font-style: italic;
+        span {
+          font-style: normal;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+}

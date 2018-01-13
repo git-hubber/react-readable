@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 
 import { ModalStyles } from '../styles/ModalStyles';
 import PostForm from '../components/PostForm';
-import SortingHeader from '../components/SortingHeader';
+
 import ItemVote from '../components/ItemVote';
 import ItemFooter from '../components/ItemFooter';
 import PostComments from '../components/PostComments';
@@ -59,8 +59,11 @@ class PostPage extends Component {
     const {
       id,
     } = this.props.post;
-    this.props.startDeletePost(id);
-    this.props.history.goBack();
+    const deleteConfirm = window.confirm('Are you sure?');
+    if (deleteConfirm) {
+      this.props.startDeletePost(id);
+      this.props.history.goBack();
+    }
   }
 
   render() {
@@ -80,37 +83,45 @@ class PostPage extends Component {
       },
     } = this.props;
     const datetime = moment(timestamp).format('DD MMMM YYYY HH:mm');
-    const fromNow = moment(timestamp).fromNow();
 
     return (
-      <div>
-        <h1>Post {id}</h1>
-        <Modal
-          isOpen={modalIsOpen}
-          style={ModalStyles}
-          onRequestClose={this._toggleModal}
-        >
-          <PostForm
-            initialValues={{ title, body }}
-            onSubmit={this._submitPost}
-            handleCancel={this._toggleModal}
-            editMode
-          />
-        </Modal>
-        <ItemVote
-          castVote={(option) => this._castVote(option)}
-          voteScore={voteScore}
-        />
-        <h2>{title}</h2>
-        <div>
-          {body}
+      <div className='container'>
+        <div id="posts">
+          <Modal
+            isOpen={modalIsOpen}
+            style={ModalStyles}
+            onRequestClose={this._toggleModal}
+          >
+            <PostForm
+              initialValues={{ title, body }}
+              onSubmit={this._submitPost}
+              handleCancel={this._toggleModal}
+              editMode
+            />
+          </Modal>
+          <div className="posts-header">
+            {title}
+          </div>
+          <div className="post">
+            <ItemVote
+              castVote={(option) => this._castVote(option)}
+              voteScore={voteScore}
+            />
+            <div className='post-content'>
+
+              {body}
+
+              <div className="dot-point"><span>@</span> {datetime}</div>
+              <div className="dot-point"><span>by</span> {author} <span>in</span> {category}</div>
+
+            </div>
+
+            <ItemFooter
+              openModal={this._toggleModal}
+              deleteItem={this._deletePost}
+            />
+          </div>
         </div>
-        <div>{author} - {datetime} - {category}</div>
-        <ItemFooter
-          openModal={this._toggleModal}
-          deleteItem={this._deletePost}
-        />
-        <SortingHeader />
         <PostComments
           postID={id}
         />

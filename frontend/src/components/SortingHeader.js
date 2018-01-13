@@ -7,7 +7,14 @@ import {
   setFilter,
 } from '../actions/sorting';
 
-const SortingHeader = ({ setSortingType, setSortingDirection, setFilter, sortType, filter }) => {
+const SortingHeader = ({
+  setSortingType,
+  setSortingDirection,
+  setFilter,
+  sortDirection,
+  sortType,
+  filter,
+}) => {
   const _handleSortType = (sortType) => {
     setSortingType(sortType);
   };
@@ -21,10 +28,9 @@ const SortingHeader = ({ setSortingType, setSortingDirection, setFilter, sortTyp
   };
 
   return (
-    <div>
+    <div id="sortingHeader">
       <div>
-          Sorting: by
-
+        Sort by
         <label htmlFor="sortScore">
           <input
             type="radio"
@@ -32,7 +38,7 @@ const SortingHeader = ({ setSortingType, setSortingDirection, setFilter, sortTyp
             onChange={() => _handleSortType('score')}
             checked={sortType === 'score' ? 'checked' : ''}
           />
-            Score
+              Score
         </label>
         <label htmlFor="sortTime">
           <input
@@ -41,26 +47,27 @@ const SortingHeader = ({ setSortingType, setSortingDirection, setFilter, sortTyp
             onChange={() => _handleSortType('time')}
             checked={sortType === 'time' ? 'checked' : ''}
           />
-            Time
+              Time
         </label>
-      </div>
-      <div>
-          Sorting: direction
+        <span>in</span>
         <button
+          className={`button${sortDirection !== 'asc' ? ' button-secondary' : ''}`}
           onClick={() => _handleSortDirection('asc')}
-        > Asc
+        > Ascending
         </button>
         <button
+          className={`button${sortDirection !== 'desc' ? ' button-secondary' : ''}`}
           onClick={() => _handleSortDirection('desc')}
-        > Desc
+        > Descending
         </button>
+        <span>order</span>
       </div>
       <div>
-        Filter: by
-
+        Show
         <label htmlFor="filterAll">
           <input
             type="radio"
+            id='filterAll'
             onChange={() => _handleFilter('all')}
             checked={filter === 'all' ? 'checked' : ''}
           />
@@ -68,6 +75,7 @@ const SortingHeader = ({ setSortingType, setSortingDirection, setFilter, sortTyp
         </label>
         <label htmlFor="filterNonSpam">
           <input
+            id='filterNonSpam'
             type="radio"
             onChange={() => _handleFilter('nonSpam')}
             checked={filter === 'nonSpam' ? 'checked' : ''}

@@ -1,0 +1,26 @@
+#nav-header {
+  background: $off-white;
+  border-bottom: 1px solid $dark-blue;
+  margin-bottom: $m-size;
+
+  a {
+    color: $dark-blue;
+    display: inline-block;
+    min-width: 100px;
+    padding: $m-size 0;
+    text-align: center;
+    text-decoration: none;
+    &.active {
+      background-color: $dark-blue;
+      color: white;
+      font-weight: bold;
+      &:hover {
+        color: white;
+      }
+    }
+    &:hover {
+      color: $blue;
+    }
+
+  }
+}

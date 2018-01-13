@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 
 import { ModalStyles } from '../styles/ModalStyles';
 import PostForm from '../components/PostForm';
-import SortingHeader from '../components/SortingHeader';
 import Posts from '../components/Posts';
 import { selector } from '../selectors/';
 
@@ -27,7 +26,7 @@ class MainPage extends Component {
   render() {
     const category = this.props.match.params.id;
     return (
-      <div>
+      <div className='container'>
         <Modal
           isOpen={this.state.modalIsOpen}
           style={ModalStyles}
@@ -40,12 +39,11 @@ class MainPage extends Component {
             editMode={false}
           />
         </Modal>
-        <button
-          onClick={this._toggleModal}
-        >New Post
-        </button>
-        <SortingHeader />
-        {this.props.posts && <Posts posts={this.props.posts} />}
+        {this.props.posts && <Posts
+          category={category}
+          posts={this.props.posts}
+          newPost={this._toggleModal}
+        />}
       </div>
     );
   }

@@ -34,7 +34,8 @@ class Post extends Component {
 
   _deletePost = () => {
     const { id } = this.props.post;
-    this.props.startDeletePost(id);
+    const deleteConfirm = window.confirm('Are you sure?');
+    if (deleteConfirm) this.props.startDeletePost(id);
   };
 
   _openModal = () => {
@@ -60,15 +61,19 @@ class Post extends Component {
       category,
     } = this.props.post;
     const datetime = moment(timestamp).format('DD MMMM YYYY HH:mm');
-    const fromNow = moment(timestamp).fromNow();
 
     return (
-      <div>
+      <div className='post'>
         <ItemVote
           castVote={(option) => this._castVote(option)}
           voteScore={voteScore}
         />
-        <Link to={`/post/${id}`}>{title}</Link> - {author} - {timestamp} - {datetime} - {category} - [{commentCount} Comments]
+        <div className='post-content'>
+          <Link to={`/post/${id}`}>{title}</Link>
+          <div className="dot-point"><span>@</span> {datetime}</div>
+          <div className="dot-point"><span>by</span> {author} <span>in</span> {category}</div>
+          <div className="dot-point">{commentCount} Comments</div>
+        </div>
         <ItemFooter
           openModal={this._openModal}
           deleteItem={this._deletePost}
