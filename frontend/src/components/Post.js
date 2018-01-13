@@ -69,7 +69,7 @@ class Post extends Component {
           voteScore={voteScore}
         />
         <div className='post-content'>
-          <Link to={`/post/${id}`}>{title}</Link>
+          <Link to={`/${category}/${id}`} className='title'>{title}</Link>
           <div className="dot-point"><span>@</span> {datetime}</div>
           <div className="dot-point"><span>by</span> {author} <span>in</span> {category}</div>
           <div className="dot-point">{commentCount} Comments</div>

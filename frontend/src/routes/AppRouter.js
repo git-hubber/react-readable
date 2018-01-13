@@ -18,11 +18,12 @@ export const AppRouter = () => (
           component={MainPage}
         />
         <Route
-          path='/categories/:id'
+          exact
+          path='/:category'
           component={MainPage}
         />
         <Route
-          path='/post/:id'
+          path='/:category/:id'
           component={PostPage}
         />
         <Route component={NotFoundPage} />

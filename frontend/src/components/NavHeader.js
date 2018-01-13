@@ -12,7 +12,7 @@ const NavHeader = ({ categories }) => (
       Reacted
       </NavLink>&nbsp;
       {categories.length > 0 && categories.map((category) => (
-        <NavLink key={category.path} to={`/categories/${category.path}`}>
+        <NavLink key={category.path} to={`/${category.path}`}>
           {category.name}&nbsp;
         </NavLink>
       ))}

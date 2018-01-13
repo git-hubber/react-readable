@@ -24,7 +24,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const category = this.props.match.params.id;
+    const { category } = this.props.match.params;
     return (
       <div className='container'>
         <Modal
@@ -49,7 +49,7 @@ class MainPage extends Component {
   }
 }
 
-const mapStateToProps = ({ posts, sorting }, { match: { params: { id: category } } }) => ({
+const mapStateToProps = ({ posts, sorting }, { match: { params: { category } } }) => ({
   posts: selector(posts, category, sorting),
 });
 
