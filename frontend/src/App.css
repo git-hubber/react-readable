@@ -181,10 +181,13 @@ button:disabled {
       width: 100%; }
       #posts .post .post-content a, #posts .post .comment-content a, #posts .comment .post-content a, #posts .comment .comment-content a, #comments .post .post-content a, #comments .post .comment-content a, #comments .comment .post-content a, #comments .comment .comment-content a {
         color: #1c88bf;
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
         text-decoration: none; }
+        #posts .post .post-content a.title, #posts .post .comment-content a.title, #posts .comment .post-content a.title, #posts .comment .comment-content a.title, #comments .post .post-content a.title, #comments .post .comment-content a.title, #comments .comment .post-content a.title, #comments .comment .comment-content a.title {
+          display: block;
+          font-size: 20px;
+          font-weight: bold; }
+        #posts .post .post-content a.category, #posts .post .comment-content a.category, #posts .comment .post-content a.category, #posts .comment .comment-content a.category, #comments .post .post-content a.category, #comments .post .comment-content a.category, #comments .comment .post-content a.category, #comments .comment .comment-content a.category {
+          margin-left: 5px; }
       #posts .post .post-content .dot-point, #posts .post .comment-content .dot-point, #posts .comment .post-content .dot-point, #posts .comment .comment-content .dot-point, #comments .post .post-content .dot-point, #comments .post .comment-content .dot-point, #comments .comment .post-content .dot-point, #comments .comment .comment-content .dot-point {
         font-style: italic; }
         #posts .post .post-content .dot-point span, #posts .post .comment-content .dot-point span, #posts .comment .post-content .dot-point span, #posts .comment .comment-content .dot-point span, #comments .post .post-content .dot-point span, #comments .post .comment-content .dot-point span, #comments .comment .post-content .dot-point span, #comments .comment .comment-content .dot-point span {

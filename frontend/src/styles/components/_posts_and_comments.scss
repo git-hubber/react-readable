@@ -43,10 +43,15 @@
       width: 100%;
       a {
         color: $blue;
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
         text-decoration: none;
+        &.title {
+          display: block;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        &.category {
+          margin-left: 5px;
+        }
       }
       .dot-point {
         font-style: italic;
